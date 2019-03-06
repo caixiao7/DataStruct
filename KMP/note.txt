@@ -1,0 +1,8 @@
+KMP子串匹配算法精髓在确定next数组上，确定next数组注意以下几点：
+
+1.next[0]=-1;  
+2.next[1]=0;
+3.前面两点是固定的。后面的需要通过递归的思想推导出来：
+试想next[j]=k,那么next[j+1]应该等于多少，如果string[j]=string[next[j]],那就说明，next[j+1]可以直接递归算出等于 next[j]+1
+
+如果string[j] != string[next[j]],那么递归匹配string[j] != string[next【next【j】】，一直到next[0] +1=0。
